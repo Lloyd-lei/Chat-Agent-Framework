@@ -28,6 +28,7 @@ chmod +x deploy_to_g1.sh
 ```
 
 脚本会自动：
+
 - ✅ 检查网络连接
 - ✅ 安装 Docker（如果需要）
 - ✅ 拉取镜像（1.32 GB）
@@ -40,11 +41,13 @@ chmod +x deploy_to_g1.sh
 ### **方案 B: 在 G1 上手动运行**
 
 1. **SSH 登录到 G1：**
+
    ```bash
    ssh unitree@192.168.123.161
    ```
 
 2. **下载项目：**
+
    ```bash
    cd ~
    git clone https://github.com/Lloyd-lei/robot_agent_mindflow.git
@@ -52,12 +55,14 @@ chmod +x deploy_to_g1.sh
    ```
 
 3. **配置环境变量：**
+
    ```bash
    nano .env
    # 添加：OPENAI_API_KEY=sk-your_key_here
    ```
 
 4. **运行部署脚本：**
+
    ```bash
    cd docker
    chmod +x run_in_docker.sh
@@ -75,16 +80,17 @@ chmod +x deploy_to_g1.sh
 
 ### **qiayuanl/unitree:jazzy-latest**
 
-| 属性 | 值 |
-|------|-----|
+| 属性         | 值                              |
+| ------------ | ------------------------------- |
 | **镜像名称** | `qiayuanl/unitree:jazzy-latest` |
-| **平台** | `linux/arm64` |
-| **大小** | 1.32 GB |
-| **基础系统** | Ubuntu 24.04 LTS |
-| **ROS 版本** | ROS 2 Jazzy |
-| **架构** | ARM64（适配 Unitree G1） |
+| **平台**     | `linux/arm64`                   |
+| **大小**     | 1.32 GB                         |
+| **基础系统** | Ubuntu 24.04 LTS                |
+| **ROS 版本** | ROS 2 Jazzy                     |
+| **架构**     | ARM64（适配 Unitree G1）        |
 
 ### **包含内容：**
+
 - ✅ ROS 2 Jazzy 完整环境
 - ✅ Unitree SDK
 - ✅ Python 3.12
@@ -352,11 +358,13 @@ docker-compose logs -f
 ## 🎯 生产环境建议
 
 1. **使用 systemd 管理容器**
+
    ```bash
    sudo docker run -d --restart=always ...
    ```
 
 2. **配置日志轮转**
+
    ```bash
    docker run --log-driver json-file --log-opt max-size=10m --log-opt max-file=3 ...
    ```
@@ -377,6 +385,7 @@ docker-compose logs -f
 ---
 
 **遇到问题？**
+
 - 查看日志：`docker logs voice-agent`
 - 进入容器调试：`docker exec -it voice-agent bash`
 - 提交 Issue：[GitHub Issues](https://github.com/Lloyd-lei/robot_agent_mindflow/issues)

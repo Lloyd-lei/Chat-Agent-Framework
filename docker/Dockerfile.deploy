@@ -32,3 +32,4 @@ ENV PYTHONIOENCODING=utf-8
 # 默认命令
 CMD ["/bin/bash"]
 
+

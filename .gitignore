@@ -7,7 +7,6 @@ __pycache__/
 env/
 venv/
 ENV/
-.venv
 
 # Environment
 .env
@@ -30,3 +29,6 @@ Thumbs.db
 sessions/
 logs/
 temp_audio/
+
+# Docker 配置（不上传）
+docker/

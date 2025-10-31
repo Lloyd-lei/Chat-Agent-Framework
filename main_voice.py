@@ -37,10 +37,11 @@ class SimpleVAD:
 class VoiceRecorder:
     """语音录音器（带 VAD）"""
     
-    def __init__(self, vad: SimpleVAD, sample_rate: int = 16000, chunk_size: int = 480):
+    def __init__(self, vad: SimpleVAD, sample_rate: int = 16000, chunk_size: int = 480, device_index: int = None):
         self.vad = vad
         self.sample_rate = sample_rate
         self.chunk_size = chunk_size
+        self.device_index = device_index
         self.audio = pyaudio.PyAudio()
         self.stream = None
     

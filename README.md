@@ -1,5 +1,11 @@
 # AI Agent + TTS 语音助手
 
+录音线程 ──┐
+           ├──> ASR 线程 ──> LLM 线程 ──┐
+VAD 线程 ──┘                            ├──> TTS 线程 ──> 播放线程
+                                        │
+                                        └──> 工具调用线程
+
 **- OpenAI / Ollama + LangChain + Edge TTS**
 
 <p align="center">
