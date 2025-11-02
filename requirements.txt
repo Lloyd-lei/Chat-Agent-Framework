@@ -5,6 +5,7 @@ langchain-community==0.0.10
 
 # OpenAI SDK (更新版本以兼容langchain-openai)
 openai>=1.10.0
+httpx<0.28.0  # 兼容性修复：新版本与 openai 库不兼容
 
 # 环境变量管理
 python-dotenv==1.0.0
